@@ -1,0 +1,78 @@
+<form>
+  <input type="text" class="form-control"
+  (keyup.enter)="addTopic(topic)"
+  #topic
+  >
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let topic of topics.controls; index as i" (click)="removeTopic(i)">{{ topic.value }}</li>
+  </ul>
+</form>
+
+
+
+
+
+
+<!-- <form #f="ngForm">
+  <div class="form-group">
+    <label for="courseName">Course name:</label>
+    <input
+      ngModel
+      name="courseName"
+      #courseName="ngModel"
+      id="courseName"
+      type="text"
+      class="form-control"
+      required
+      minlength="3"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="courseName.errors && courseName.touched"
+    >
+      <div *ngIf="courseName.errors?.['required']">First name is required</div>
+      <div *ngIf="courseName.errors?.['minlength']">
+        First name should have 3 or more characters
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <div>
+      <select
+        ngModel
+        name="category"
+        id="category"
+        class="form-control"
+        required
+        #category="ngModel"
+      >
+        <option></option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="category.errors?.['required'] && category.touched "
+      >
+        Category is required
+      </div>
+    </div>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ngModel name="hasGuarantee" />
+      30-days money-back guarantee
+    </label>
+  </div>
+
+  <p>{{ f.value | json }}</p>
+
+  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+    Create
+  </button>
+</form> -->

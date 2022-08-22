@@ -1,0 +1,15 @@
+<h1>My GitHub Followers...</h1>
+<div *ngFor="let follower of followers" class="wrapper">
+  <div>
+    <div>
+      <img alt="github-followers" [src]="follower.avatar_url" class="avatar" />
+    </div>
+  </div>
+
+  <div>
+    <h2 ><a [routerLink]="['/followers', follower.id]" >{{ follower.login }}</a></h2>
+    <a [href]="follower.html_url"
+      ><h3>{{ follower.html_url }}</h3></a
+    >
+  </div>
+</div>
